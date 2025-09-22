@@ -1,1 +1,335 @@
-# flores-amarillas
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor - Flores Amarillas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #fff8e1, #ffecb3);
+            color: #5d4037;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #ffd54f, #ffb300);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+            position: relative;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+        
+        .highlight {
+            color: #ff8f00;
+            font-weight: 600;
+        }
+        
+        .flowers-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .flower {
+            width: 90px;
+            height: 90px;
+            background: #ffd54f;
+            border-radius: 50%;
+            position: relative;
+            animation: float 6s infinite ease-in-out;
+            box-shadow: 0 5px 15px rgba(255, 179, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flower:nth-child(2n) {
+            animation-delay: 1.5s;
+            background: #ffb300;
+        }
+        
+        .flower:nth-child(3n) {
+            animation-delay: 2.5s;
+            background: #ffc107;
+        }
+        
+        .petal {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: inherit;
+            border-radius: 50%;
+        }
+        
+        .petal:nth-child(1) { top: -10px; left: 27px; }
+        .petal:nth-child(2) { top: 10px; right: -10px; }
+        .petal:nth-child(3) { bottom: -10px; left: 27px; }
+        .petal:nth-child(4) { top: 10px; left: -10px; }
+        .petal:nth-child(5) { top: -5px; left: 10px; }
+        .petal:nth-child(6) { top: -5px; right: 10px; }
+        .petal:nth-child(7) { bottom: -5px; left: 10px; }
+        .petal:nth-child(8) { bottom: -5px; right: 10px; }
+        
+        .center {
+            width: 35px;
+            height: 35px;
+            background: #6d4c41;
+            border-radius: 50%;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .instructions {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .instructions h3 {
+            color: #ff8f00;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(to right, #ffd54f, #ffb300);
+            color: white;
+            font-style: italic;
+        }
+        
+        .heart {
+            color: #ff5252;
+            font-size: 1.8rem;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(3deg); }
+            66% { transform: translateY(10px) rotate(-3deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .button {
+            display: inline-block;
+            background: #ffb300;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .button:hover {
+            background: #ff8f00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .message { font-size: 1rem; }
+            .flower { 
+                width: 70px; 
+                height: 70px; 
+            }
+            .petal { 
+                width: 25px; 
+                height: 25px; 
+            }
+            .center { 
+                width: 25px; 
+                height: 25px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Para Mi Amor</h1>
+            <div class="subtitle">Las flores amarillas de nuestro amor</div>
+        </div>
+        
+        <div class="content">
+            <div class="message">
+                <p>Querida <span class="highlight">[Nombre de tu novia]</span>,</p>
+                <p>En este día especial, quise regalarte estas flores amarillas que representan la alegría que traes a mi vida, la calidez de tu amor y la luz que ilumina mis días.</p>
+                <p>Cada pétalo es un momento feliz que hemos compartido, y el centro de cada flor es la esencia de nuestro cariño.</p>
+                <p>Te amo hoy y siempre.</p>
+            </div>
+            
+            <div class="flowers-container">
+                <div class="flower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="center"></div>
+                </div>
+                
+                <div class="flower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="center"></div>
+                </div>
+                
+                <div class="flower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="center"></div>
+                </div>
+            </div>
+            
+            <div class="message">
+                <p>Que nuestro amor siga floreciendo como estas flores amarillas,<br>siempre radiante y lleno de vida.</p>
+                <p>Con todo mi cariño,<br><span class="highlight">[Tu nombre]</span></p>
+            </div>
+            
+            <div class="instructions">
+                <h3>¿Cómo compartir esta página?</h3>
+                <ol>
+                    <li>Reemplaza [Mishel] y [Alexander] con los nombres reales</li>
+                    <li>Guarda este archivo en tu computadora como "flores-amarillas.html"</li>
+                    <li>Sube el archivo a GitHub Pages, Netlify o el servicio que prefieras</li>
+                    <li>Comparte el enlace con tu novia</li>
+                </ol>
+                <div style="text-align: center;">
+                    <a href="https://github.com/" class="button">Crear cuenta en GitHub</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Creado con <span class="heart">❤</span> para ti | <span id="date"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Establecer la fecha actual
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('date').textContent = now.toLocaleDateString('es-ES', options);
+        
+        // Efecto de caída de pétalos
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.style.position = 'fixed';
+            petal.style.width = '20px';
+            petal.style.height = '20px';
+            petal.style.background = 'linear-gradient(to right, #ffd54f, #ffb300)';
+            petal.style.borderRadius = '50% 50% 50% 50%';
+            petal.style.zIndex = '1000';
+            petal.style.top = '0';
+            petal.style.left = Math.random() * window.innerWidth + 'px';
+            petal.style.opacity = '0.7';
+            petal.style.pointerEvents = 'none';
+            document.body.appendChild(petal);
+            
+            const animation = petal.animate([
+                { transform: 'translateY(0) rotate(0deg)', opacity: 0.7 },
+                { transform: `translateY(${window.innerHeight}px) rotate(${360}deg)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 3000,
+                easing: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+            });
+            
+            animation.onfinish = () => {
+                petal.remove();
+            };
+        }
+        
+        // Crear pétalos cada 300ms
+        setInterval(createPetal, 300);
+    </script>
+</body>
+</html>
