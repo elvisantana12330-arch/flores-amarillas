@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -162,7 +162,7 @@
         
         <div class="content">
             <div class="message">
-                <p>Querida <strong>[Nombre de tu novia]</strong>,</p>
+                <p>Querida <strong>[Mishel]</strong>,</p>
                 <p>En este día especial, quise regalarte estas flores amarillas que representan la alegría que traes a mi vida, la calidez de tu amor y la luz que ilumina mis días.</p>
                 <p>Cada pétalo es un momento feliz que hemos compartido, y el centro de cada flor es la esencia de nuestro cariño.</p>
                 <p>Te amo hoy y siempre.</p>
@@ -208,7 +208,7 @@
             
             <div class="message">
                 <p>Que nuestro amor siga floreciendo como estas flores amarillas,<br>siempre radiante y lleno de vida.</p>
-                <p>Con todo mi cariño,<br><strong>[Tu nombre]</strong></p>
+                <p>Con todo mi cariño,<br><strong>[Alexander]</strong></p>
             </div>
         </div>
         
@@ -256,3 +256,4 @@
     </script>
 </body>
 </html>
+
